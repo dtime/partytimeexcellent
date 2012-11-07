@@ -3,7 +3,6 @@ $(->
 )
 
 main = ->
-  load_image('images/example.jpg')
   ajaxer() # do the first request
   poll() # start polling
 

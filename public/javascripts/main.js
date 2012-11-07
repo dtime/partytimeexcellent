@@ -7,7 +7,6 @@
   });
 
   main = function() {
-    load_image('images/example.jpg');
     ajaxer();
     return poll();
   };
