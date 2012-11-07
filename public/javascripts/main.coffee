@@ -4,15 +4,22 @@ $(->
 
 main = ->
   load_image('images/example.jpg')
-
-  poll()
+  ajaxer() # do the first request
+  poll() # start polling
 
 poll = ->
   setTimeout(->
-    console.log 'do an ajax call'
-    load_image('images/example.jpg')
-    poll()
+    ajaxer() # do a request
+    poll() # call itself
   , 30000)
+
+ajaxer = ->
+  #url: '/images'
+  $.ajax
+    method: 'get'
+    url: '/random_images'
+    success: (data)->
+      load_image JSON.parse(data).images[0]
 
 load_image = (url)->
   if $('#pictures img').length > 0
@@ -28,4 +35,4 @@ loader = (url)->
   $(img).load(->
     $('#pictures').append $(img)
     $(img).fadeIn(2000)
-  ).attr('src', url)
+  ).attr('src', "booth/#{url}")

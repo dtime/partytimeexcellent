@@ -32,3 +32,7 @@ get '/random_images' do
   images_hash = {images: images_array}
   images_hash.to_json
 end
+
+get '/' do
+  File.read(File.join('views', 'index.html'))  #send_file '/views/index.html'
+end
