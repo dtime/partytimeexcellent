@@ -1,0 +1,56 @@
+body{
+  background: #4b6573;
+  color: #e8f1f7;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 30px;
+  text-shadow: 0 -1px black, 0 2px 8px rgba(0,0,0,0.8)
+}
+
+#instructions{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 780px;
+  height: 310px;
+  background: rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+h1{
+  font-size: 60px;
+  text-align: center;
+  line-height: 20px;
+  margin-top: 50px;
+}
+
+ol, ul{
+  width: 700px;
+  position: relative;
+  left: 50%;
+  margin-left: -350px;
+}
+
+#logo{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 1%;
+  padding-bottom: 0.3%;
+  z-index: 10;
+}
+
+#pictures{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center
+}
+
+#pictures img{
+  height: 100%;
+  box-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
