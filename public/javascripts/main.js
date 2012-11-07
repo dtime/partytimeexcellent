@@ -46,7 +46,7 @@
     return $(img).load(function() {
       $('#pictures').append($(img));
       return $(img).fadeIn(2000);
-    }).attr('src', "booth/" + url);
+    }).attr('src', "booth/" + (encodeURIComponent(url)));
   };
 
 }).call(this);

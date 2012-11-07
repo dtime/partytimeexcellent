@@ -34,4 +34,4 @@ loader = (url)->
   $(img).load(->
     $('#pictures').append $(img)
     $(img).fadeIn(2000)
-  ).attr('src', "booth/#{url}")
+  ).attr('src', "booth/#{encodeURIComponent(url)}")
