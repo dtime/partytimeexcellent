@@ -9,23 +9,26 @@ unless File.exist?('./public/booth')
 end
 
 get '/images' do
-  image_array = []
+  images_array = []
+  images_hash = {}
   Dir.foreach("./public/booth") do |element|
-    image_array << element
+    images_array << element
   end
-  image_array.delete(".")
-  image_array.delete("..") 
-  json image_array
+  images_array.delete(".")
+  images_array.delete("..")
+  images_hash = {images: images_array}
+  images_hash.to_json
 end
 
 get '/random_images' do
-  image_array = []
+  images_array = []
+  images_hash = {}
   Dir.foreach("./public/booth") do |element|
-    image_array << element
+    images_array << element
   end
-  image_array.delete(".")
-  image_array.delete("..") 
-  image_array.shuffle!
-  image_array
-  
+  images_array.delete(".")
+  images_array.delete("..")
+  images_array.shuffle!
+  images_hash = {images: images_array}
+  images_hash.to_json
 end
